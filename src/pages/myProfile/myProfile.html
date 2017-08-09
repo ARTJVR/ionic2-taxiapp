@@ -1,0 +1,68 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>My Profile ( {{title}} )</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="page-myProfile">
+    <div class="myProfile-header">
+        <img [src]="image">
+        <span class="cameraIcon" (click)="openCameraPopover()"><ion-icon name="camera"></ion-icon></span>
+    </div>
+    <form padding [formGroup]="sampleForm" class="form" (ngSubmit)="onSubmit(sampleForm.value)">
+
+        <ion-item>
+            <ion-label floating color="primary">Name</ion-label>
+            <ion-input type="text" [(ngModel)]="name" formControlName="name"></ion-input>
+        </ion-item>
+        <div *ngIf="formErrors.name">
+            <div *ngFor="let errors of formErrors.name">
+                <p class="alert">{{ errors }}
+                    <p>
+            </div>
+        </div>
+
+        <ion-item>
+            <ion-label floating color="primary">Email</ion-label>
+            <ion-input type="email" [(ngModel)]="email" formControlName="email"></ion-input>
+        </ion-item>
+        <div *ngIf="formErrors.email">
+            <div *ngFor="let errors of formErrors.email">
+                <p class="alert">{{ errors }}
+                    <p>
+            </div>
+        </div>
+
+        <ion-item>
+            <ion-label floating color="primary">Country</ion-label>
+            <ion-select formControlName="country" [(ngModel)]="_country">
+                <ion-option *ngFor="let item of countries" [value]="item">{{item.name}}</ion-option>
+            </ion-select>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating color="primary">Gender</ion-label>
+            <ion-select formControlName="gender" [(ngModel)]="gender">
+                <ion-option value="male">Male</ion-option>
+                <ion-option value="female">Female</ion-option>
+            </ion-select>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating color="primary">Password</ion-label>
+            <ion-input type="password" [(ngModel)]="password" formControlName="password" reverse="true"></ion-input>
+        </ion-item>
+        <div *ngIf="formErrors.password">
+            <div *ngFor="let errors of formErrors.password">
+                <p class="alert">{{ errors }}
+                    <p>
+            </div>
+        </div>
+
+        <button class="update" ion-button full type="submit" [disabled]="!sampleForm.valid">Update</button>
+
+    </form>
+</ion-content>

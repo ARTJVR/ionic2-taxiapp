@@ -1,0 +1,22 @@
+.page-myProfile {
+    .myProfile-header {
+        background-color: color($colors, primary);
+        width: 100%;
+        min-height: 150px;
+        text-align: center;
+    }
+    .myProfile-header img {
+        max-width: 170px;
+        min-height: 115px;
+        padding: 25px 0 20px 0;
+    }
+    .cameraIcon {
+        position: absolute;
+        top: 170px;
+        font-size: 25px;
+        margin-left: -30px;
+    }
+    .update {
+        padding: 10px
+    }
+}

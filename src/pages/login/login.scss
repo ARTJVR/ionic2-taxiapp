@@ -1,0 +1,67 @@
+page-login {
+    .no-scroll .scroll-content {
+        overflow: hidden;
+    }
+    ion-grid {
+        margin-top: 35px !important;
+    }
+    ion-col {
+        color: color($colors, light);
+        font-size: $font-size;
+        padding: 5px 0 0 0 !important;
+    }
+    .signup_green {
+        color: color($colors, primary);
+    }
+    ion-content {
+        background-color: transparent;
+        background: url('../assets/img/login_bg.jpg') center center no-repeat;
+        background-size: cover;
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-image: linear-gradient(to bottom right, #5d6a71, #907d79);
+            opacity: .6;
+        }
+    }
+    .login-header {
+        margin: 8% 0;
+        width: 100%;
+        min-height: 150px;
+        text-align: center;
+    }
+    .login-header img {
+        width: 50%;
+        height: 50%;
+        border-radius: 50%;
+        box-shadow: -3px 2px 45px 0px rgba(245, 233, 245, 0.44);
+        -webkit-box-shadow: -3px 2px 45px 0px rgba(245, 233, 245, 0.44);
+        -moz-box-shadow: -3px 2px 45px 0px rgba(245, 233, 245, 0.44);
+    }
+    button {
+        opacity: 1 !important;
+        .disable-hover.item-button.button.button-ios.button-default.button-default-ios.button-full.button-full-ios {
+            padding: 20px;
+        }
+    }
+    .term {
+        padding-top: 20px;
+    }
+    .terms-checkbox-label {
+        overflow: visible;
+        text-overflow: initial;
+        white-space: initial;
+        opacity: 0.5;
+        font-size: 14px;
+        font-weight: bold;
+    }
+    .alert {
+        margin-top: 0;
+        position: absolute;
+        color: red;
+    }
+}

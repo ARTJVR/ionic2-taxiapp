@@ -1,0 +1,57 @@
+page-signup {
+    .term {
+        padding-top: 20px;
+    }
+    form {
+        font: fantasy !important;
+    }
+    .checkbox-icon {
+        border-color: #0c0c0c !important;
+    }
+    ion-grid {
+        color: #fff;
+    }
+    ion-content {
+        background-color: transparent;
+        background: url('../assets/img/login_bg.jpg') center center no-repeat;
+        background-size: cover;
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-image: linear-gradient(to bottom right, #5d6a71, #907d79);
+            opacity: .6;
+        }
+    }
+    button {
+        opacity: 1 !important;
+    }
+    .signup-header {
+        margin: 8% 0;
+        width: 100%;
+        min-height: 150px;
+        text-align: center;
+    }
+    .signup-header img {
+        width: 50%;
+        height: 50%;
+        border-radius: 50%;
+        box-shadow: -3px 2px 45px 0px rgba(245, 233, 245, 0.44);
+        -webkit-box-shadow: -3px 2px 45px 0px rgba(245, 233, 245, 0.44);
+        -moz-box-shadow: -3px 2px 45px 0px rgba(245, 233, 245, 0.44);
+    }
+    .terms-checkbox-label {
+        overflow: visible;
+        text-overflow: initial;
+        white-space: initial;
+        opacity: 0.5;
+        font-size: 14px;
+        font-weight: bold;
+    }
+    .alert {
+        color: red;
+    }
+}

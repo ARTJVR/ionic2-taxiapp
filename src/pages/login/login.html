@@ -1,0 +1,55 @@
+<!--<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{title}}</ion-title>
+  </ion-navbar>
+</ion-header>-->
+
+<ion-content padding class="page-login form-content no-scroll">
+    <form [formGroup]="sampleForm" class="form" (ngSubmit)="onSubmit(sampleForm.value)">
+
+        <div class="login-header">
+            <img [src]="image">
+        </div>
+
+        <ion-item>
+            <ion-label floating color="primary">Email</ion-label>
+            <ion-input type="text" formControlName="email"></ion-input>
+            <ion-label *ngIf="formErrors.email">
+                <div *ngFor="let errors of formErrors.email">
+                    <p class="alert">{{ errors }}
+                        <p>
+                </div>
+            </ion-label>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating color="primary">Password</ion-label>
+            <ion-input type="password" formControlName="password" validateEqual="confirmPassword" reverse="true"></ion-input>
+
+            <ion-label *ngIf="formErrors.password">
+                <div *ngFor="let errors of formErrors.password">
+                    <p class="alert">{{ errors }}
+                        <p>
+                </div>
+            </ion-label>
+        </ion-item>
+
+        <button ion-button full type="submit" [disabled]="!sampleForm.valid">Login</button>
+    </form>
+
+    <ion-grid text-left>
+        <ion-row>
+            <ion-col width-43 (click)="onForgotPassword()">
+                Forgot Password?
+            </ion-col>
+            <ion-col width-57 (click)="onGoSignup()">
+                Haven't Account
+                <span class="signup_green">Signup</span>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+</ion-content>

@@ -1,0 +1,38 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>{{title}}</ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only (click)="presentPopover($event)">
+                <ion-icon name="more"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content scroll="false" class="map-page">
+    <!--<button fab fab-bottom fab-right color="primary" (click)="goToConfirmation()"><ion-icon name="ios-call"></ion-icon></button>-->
+    <!--<div class="my-overlay" padding></div>-->
+    <set-route></set-route>
+    <ion-fab bottom right>
+        <button ion-fab color="primary" (click)="goPayment()">Next</button>
+    </ion-fab>
+</ion-content>
+
+<ion-footer class="map-page-footer">
+    <ion-toolbar>
+        <div class="message">Choose your drop-off above</div>
+        <ion-segment [(ngModel)]="footerItem" color="">
+            <ion-segment-button value="TAXI" (ionSelect)="selectedTAXI()">
+                TAXI
+            </ion-segment-button>
+            <ion-segment-button value="SUV" (ionSelect)="selectedSUV()">
+                SUV
+            </ion-segment-button>
+            <ion-segment-button value="CAR" (ionSelect)="selectedCAR()">
+                CAR
+            </ion-segment-button>
+        </ion-segment>
+    </ion-toolbar>
+</ion-footer>

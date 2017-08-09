@@ -1,0 +1,25 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>{{title}}</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding class="page-find-driver no-scroll">
+    <div class="find-header">
+        <img [src]="image">
+    </div>
+    <ion-grid>
+        <ion-scroll scrollY="true">
+            <ion-row *ngFor="let driver of drivers">
+                <ion-col col-7>
+                    <ion-item>{{driver.name}}</ion-item>
+                </ion-col>
+                <ion-col col-5 *ngIf="!driver.hireme">
+                    <ion-item>{{driver.status}}</ion-item>
+                </ion-col>
+                <ion-col col-5 *ngIf="driver.hireme">
+                    <ion-item class="hireBtn" (click)="driverProfile()">{{hireBtn}}</ion-item>
+                </ion-col>
+            </ion-row>
+        </ion-scroll>
+    </ion-grid>
+</ion-content>

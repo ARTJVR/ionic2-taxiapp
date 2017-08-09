@@ -1,0 +1,68 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>{{title}}</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content scroll="false" class="payment-page">
+    <set-route></set-route>
+    <div class="my-overlay" padding [hidden]="overlayHidden"></div>
+    <div class="bottom-action">
+        <ion-grid>
+            <ion-row (click)="radioAlert()">
+                <ion-col col-2>
+                    <ion-item>
+                        <ion-icon name="cash"></ion-icon>
+                    </ion-item>
+                </ion-col>
+                <ion-col col-8>
+                    <ion-item>Payment Cash</ion-item>
+                </ion-col>
+                <ion-col col-2>
+                    <ion-item>
+                        <ion-icon name="arrow-dropright"></ion-icon>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col col-6>
+                    <ion-item (click)="pickupOption(1)"><button ion-button block>PICK-UP NOW</button></ion-item>
+                </ion-col>
+                <ion-col col-6>
+                    <ion-item (click)="pickupOption(2)"><button ion-button block>PICK-UP LATER</button></ion-item>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col col-2>
+                    <ion-item>
+                        <ion-icon name="open"></ion-icon>
+                    </ion-item>
+                </ion-col>
+                <ion-col col-10>
+                    <ion-item>
+                        <ion-input type="text" [(ngModel)]="driver_note" placeholder="Notes to driver"></ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col col-2>
+                    <ion-item>
+                        <ion-icon name="pricetag"></ion-icon>
+                    </ion-item>
+                </ion-col>
+                <ion-col col-10>
+                    <ion-item>
+                        <ion-input type="text" [(ngModel)]="promo_code" placeholder="Promo code"></ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col col-12>
+                    <button ion-button full (click)="book()">Book</button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+</ion-content>
